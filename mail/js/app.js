@@ -7,7 +7,7 @@
 
 // Per chiedere all'utente la sua email dovrò
     // Creare un input type email nel file html
-        // Nel file js dovro creare una variabile per selezionare l'input che mi serve  
+        // Nel file js dovro creare una variabile per selezionare l'input che ho appena creato  
         // Creare un altra variabile per salvare il valore dell'input.
     // Creare un submit nel file html per inviare l'email inserita dall'utente al click
         // creo una variabile submitDomElement nel file js per selezionare il pulsante
@@ -29,5 +29,30 @@
         // SE nella variabile è scritto true stamperò "Sei abilitato all'accesso"
         // ALTRIMENTI "Accesso negato"
 
+const inputDomElement = document.querySelector("input");
+const submitDomElement = document.querySelector("button");
 
-    
+const emails = ["prova@gmail.it","info@prova.it","pippo@mail.it"];
+
+submitDomElement.addEventListener("click", function(){
+    let inputValue = inputDomElement.value;
+    let email;
+    let isUserEmailInArray = false;
+
+    for (let i = 0; i < emails.length; i++){
+        email = emails[i];
+
+        if (inputValue === email){
+            isUserEmailInArray = true;
+        }
+    }
+
+    if(isUserEmailInArray === true){
+        console.log("Accesso Consentito");
+        submitDomElement.innerHTML = "Accesso Consentito"
+    }
+    else{
+        console.log("Accesso Negato");
+        submitDomElement.innerHTML = "Accesso Negato"
+    }
+})
