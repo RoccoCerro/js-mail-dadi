@@ -17,26 +17,31 @@
     // {
         // console.log(vince il pc)
     // }
-    const displayDomElement = document.getElementById("display");
-    const buttonDomElement = document.querySelector("button");
 
-    buttonDomElement.addEventListener("click", function(){
+const displayDomElement = document.getElementById("display");
+const buttonDomElement = document.querySelector("button");
 
-        let giocatore = Math.floor(Math.random() * 6) + 1
-        console.log ("Giocatore ", giocatore)
-        let computer = Math.floor(Math.random() * 6) + 1
-        console.log ("Computer ", computer)
+buttonDomElement.addEventListener("click", function(){
 
-        let num = "User " + giocatore + " PC " + computer
-        let risultato = "Hai perso";
+    let giocatore = Math.floor(Math.random() * 6) + 1
+    console.log ("Giocatore ", giocatore)
+    let computer = Math.floor(Math.random() * 6) + 1
+    console.log ("Computer ", computer)
 
-        if (giocatore > computer){
-            risultato = "Hai vinto";
-        }
-        else if (giocatore === computer) {
-            risultato = "Pari";
-        }
+    let num = "User " + giocatore + " - " + computer + " PC"
+    let risultato = "Hai perso";
 
-        displayDomElement.innerHTML = num + " <br> " + risultato;
+    if (giocatore > computer){
+        risultato = "Hai vinto";
+    }
+    else if (giocatore === computer) {
+        risultato = "Pari";
+    }
 
+    displayDomElement.innerHTML = num + " <br> " + risultato;
     })
+
+// contare le partite vinte dal giocatore e quelle vinte dal pc
+    // creo un contatore user e uno pc
+    // incremento di uno il contatore user ogni volta che giocatore vince
+    // incremento di uno quello di pc ogni volta che pc vince
