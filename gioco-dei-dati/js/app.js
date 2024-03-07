@@ -21,12 +21,13 @@
     const buttonDomElement = document.querySelector("button");
 
     buttonDomElement.addEventListener("click", function(){
-        
+
         let giocatore = Math.floor(Math.random() * 6) + 1
         console.log ("Giocatore ", giocatore)
         let computer = Math.floor(Math.random() * 6) + 1
         console.log ("Computer ", computer)
 
+        let num = "User " + giocatore + " PC " + computer
         let risultato = "Hai perso";
 
         if (giocatore > computer){
@@ -36,6 +37,6 @@
             risultato = "Pari";
         }
 
-        displayDomElement.innerHTML = risultato;
+        displayDomElement.innerHTML = num + " " + risultato;
 
     })
