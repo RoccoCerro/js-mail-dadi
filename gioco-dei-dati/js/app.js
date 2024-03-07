@@ -17,18 +17,25 @@
     // {
         // console.log(vince il pc)
     // }
+    const displayDomElement = document.getElementById("display");
+    const buttonDomElement = document.querySelector("button");
 
-    let giocatore = Math.floor(Math.random() * 6) + 1
-    console.log ("Giocatore ", giocatore)
-    let computer = Math.floor(Math.random() * 6) + 1
-    console.log ("Computer ", computer)
+    buttonDomElement.addEventListener("click", function(){
+        
+        let giocatore = Math.floor(Math.random() * 6) + 1
+        console.log ("Giocatore ", giocatore)
+        let computer = Math.floor(Math.random() * 6) + 1
+        console.log ("Computer ", computer)
 
-    if (giocatore > computer){
-        console.log("Hai vinto")
-    }
-    else if (giocatore === computer) {
-        console.log("Pari")
-    }
-    else {
-        console.log("Hai perso")
-    }
+        let risultato = "Hai perso";
+
+        if (giocatore > computer){
+            risultato = "Hai vinto";
+        }
+        else if (giocatore === computer) {
+            risultato = "Pari";
+        }
+
+        displayDomElement.innerHTML = risultato;
+
+    })
