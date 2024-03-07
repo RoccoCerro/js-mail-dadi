@@ -37,6 +37,6 @@
             risultato = "Pari";
         }
 
-        displayDomElement.innerHTML = num + " " + risultato;
+        displayDomElement.innerHTML = num + " <br> " + risultato;
 
     })
